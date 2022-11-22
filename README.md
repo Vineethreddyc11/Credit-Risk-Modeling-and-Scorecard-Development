@@ -37,3 +37,21 @@ The dataset used for this projects is related to consumer loans issued by the Le
 
 
 
+## WoE Binning and Feature Engineering
+
+Creating new categorical features for all numerical and categorical variables based on WoE is one of the most critical steps before developing a credit risk model.
+
+
+### WoE and IV
+Weight of Evidence (WoE) and Information Value (IV) are used for feature engineering and selection and are extensively used in the credit scoring domain.
+
+WoE is a measure of the predictive power of an independent variable in relation to the target variable. It measures the extent a specific feature can differentiate between target classes, in this case: good and bad customers.
+
+IV assists with ranking our features based on their relative importance.
+
+### Steps for WoE feature engineering
+
+- 1. Calculate WoE for each unique value (bin) of a categorical variable, e.g., for each of grad:A, grad:B, grad:C, etc.
+- 2. Bin a continuous variable into discrete bins based on its distribution and number of unique observations, maybe using pd.cut (called fine classing)
+- 3. Calculate WoE for each derived bin of the continuous variable
+- 4. Once WoE has been calculated for each bin of both categorical and numerical features, combine bins as per the following rules (called coarse classing)
