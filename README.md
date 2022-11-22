@@ -33,4 +33,7 @@ The dataset used for this projects is related to consumer loans issued by the Le
 
 - Calculated the pair-wise correlations of the selected top 20 numerical features to detect any potentially multicollinear variables. A heat-map of these pair-wise correlations identifies two features (out_prncp_inv and total_pymnt_inv) as highly correlated. Therefore,  droping them also for our model.
 
+<img width="743" alt="Screen Shot 2022-11-21 at 8 56 05 PM" src="https://user-images.githubusercontent.com/68578215/203225169-997f983d-f7ef-4821-8346-9b4b2b6b18d5.png">
+
+
 
