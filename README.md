@@ -32,3 +32,5 @@ The dataset used for this projects is related to consumer loans issued by the Le
 - Performed feature selection to identify the most suitable features for our binary classification problem using the Chi-squared test for categorical features and ANOVA F-statistic for numerical features.
 
 - Calculated the pair-wise correlations of the selected top 20 numerical features to detect any potentially multicollinear variables. A heat-map of these pair-wise correlations identifies two features (out_prncp_inv and total_pymnt_inv) as highly correlated. Therefore,  droping them also for our model.
+
+
