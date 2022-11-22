@@ -13,8 +13,22 @@ The dataset used for this projects is related to consumer loans issued by the Le
 
 ## Data Exploration
 
-- 18 features with more than 80% of missing values. Given the high proportion of missing values, any technique to impute them will most likely result in inaccurate results
+- 18 features with more than 80% of missing values. Given the high proportion of missing values, any technique to impute them will most likely result in inaccurate results.
 
-- Certain static features not related to credit risk, e.g., id, member_id, url, title
+- Certain static features not related to credit risk, e.g., id, member_id, url, title.
 
-- Other forward-looking features that are expected to be populated only once the borrower has defaulted, e.g., recoveries, collection_recovery_fee. Since our objective here is to predict the future probability of default, having such features in our model will be counterintuitive, as these will not be observed until the default event has occurred
+- Other forward-looking features that are expected to be populated only once the borrower has defaulted, e.g., recoveries, collection_recovery_fee. Since our objective here is to predict the future probability of default, having such features in our model will be counterintuitive, as these will not be observed until the default event has occurred.
+
+## Data Cleaning
+
+- Remove text from the emp_length column (e.g., years) and convert it to numeric.
+
+- For all columns with dates: convert them to Python’s datetime format, create a new column as a difference between model development date and the respective date feature and then drop the original feature.
+
+-Remove text from the term column and convert it to numeric.
+
+## Feature Selection
+
+- Performed feature selection to identify the most suitable features for our binary classification problem using the Chi-squared test for categorical features and ANOVA F-statistic for numerical features.
+
+- Calculated the pair-wise correlations of the selected top 20 numerical features to detect any potentially multicollinear variables. A heat-map of these pair-wise correlations identifies two features (out_prncp_inv and total_pymnt_inv) as highly correlated. Therefore,  droping them also for our model.
